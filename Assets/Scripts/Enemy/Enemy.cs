@@ -62,6 +62,12 @@ public class Enemy : MonoBehaviour
 
         if (_health > 0) return;
 
+        HandleDeath();
+    }
+    
+    private void HandleDeath()
+    {
+        EffectManager.GetInstance().Play(EffectManager.EffectType.ENEMY_DEATH, transform.position);
         Destroy(gameObject);
     }
 
@@ -105,10 +111,5 @@ public class Enemy : MonoBehaviour
         
         /** we geven de nieuwe state de mogelijkheid om zich zelf in te stellen */
         _currentGoal.OnEnter();
-    }
-
-    private void OnDestroy()
-    {
-        // TODO Play death effect
     }
 }

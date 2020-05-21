@@ -152,6 +152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectObjects:
   - {fileID: 11400000, guid: 36181afc84f58874caeb836767f005e2, type: 2}
+  - {fileID: 11400000, guid: 44747f90b01dbe74fad184e5ab5fb189, type: 2}
+  - {fileID: 11400000, guid: 15da189fabd05b742b9f199f603352fa, type: 2}
 --- !u!4 &27005983
 Transform:
   m_ObjectHideFlags: 0
@@ -944,6 +946,12 @@ MonoBehaviour:
   - _prefab: {fileID: 3632783082164520437, guid: 6f54138421362d448b5293bb2e7fa803,
       type: 3}
     _count: 10
+  - _prefab: {fileID: 3632783082164520437, guid: 28eb894e750f6e94ab88637cde67210a,
+      type: 3}
+    _count: 5
+  - _prefab: {fileID: 3632783082164520437, guid: f23ff549659ab2148878e553cb62ac95,
+      type: 3}
+    _count: 1
 --- !u!4 &1527615976
 Transform:
   m_ObjectHideFlags: 0

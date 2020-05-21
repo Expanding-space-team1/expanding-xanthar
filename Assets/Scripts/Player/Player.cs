@@ -18,6 +18,8 @@ namespace PlayerData
         void Start()
         {
             _health = _maxHealth;
+            GameManager.PlayerDeath += HandlePlayerDeath;
+            
         }
 
         public void Damage(float damage)
@@ -32,6 +34,12 @@ namespace PlayerData
 
             GameManager.PlayerDeath?.Invoke();
         }
+        private void HandlePlayerDeath()
+        {
+            EffectManager.GetInstance().Play(EffectManager.EffectType.PLAYER_DEATH, transform.position);
+            gameObject.SetActive(false);
+        }
     }
+    
 
 }

@@ -44,13 +44,17 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.otherCollider.gameObject.GetComponent<Player>() != null)
+        var enemy = collision.collider.gameObject.GetComponent<Enemy>();
+        
+        if (collision.collider.gameObject.GetComponent<Player>() != null)
         {
+            Debug.Log("Damage Player: " + _damage);
             GameManager.GetInstance().Player.Damage(_damage);
-        } else if (collision.otherCollider.gameObject.GetComponent<Enemy>() != null)
+        } else if (enemy != null)
         {
-            // TODO Damage Enemy
+            Debug.Log("Damage Enemy: " + _damage);
             
+            enemy.Damage(_damage);
         }
         
         Destroy(gameObject);
