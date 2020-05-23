@@ -7,7 +7,7 @@ public class ShootProjectileGoal : Goal
     [SerializeField] private Projectile _projectilePrefab;
 
     private bool shot;
-
+    [SerializeField] private GameObject _bulletLocation;
     public override void OnEnter()
     {
         shot = false;
@@ -26,7 +26,7 @@ public class ShootProjectileGoal : Goal
             return;
         }
 
-        var position = transform.position;
+        var position = _bulletLocation.transform.position;
         var projectileObject = Instantiate(_projectilePrefab.gameObject, position, Quaternion.identity);
         
         var projectile = projectileObject.GetComponent<Projectile>();

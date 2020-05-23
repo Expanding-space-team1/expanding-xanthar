@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class WanderGoal : Goal
 {
@@ -9,8 +11,16 @@ public class WanderGoal : Goal
     [SerializeField]
     private float _speed;
 
+    [SerializeField]
+    private SpriteRenderer _spriteRenderer;
+
     private Vector2 _targetPosition;
-    
+
+    private void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     public override void OnEnter()
     {
         ChooseTargetLocation();
@@ -21,6 +31,22 @@ public class WanderGoal : Goal
         float step = _speed * Time.deltaTime;
 
         transform.position = Vector2.MoveTowards(transform.position, _targetPosition, step);
+        if (_targetPosition.x > transform.position.x)
+        {
+            // Flip naar rechts
+            if (_spriteRenderer.flipX)
+            {
+                _spriteRenderer.flipX = false;
+            }
+        }else if (_targetPosition.x < transform.position.x)
+        {
+            // Flip naar links
+            if (!_spriteRenderer.flipX)
+            {
+                _spriteRenderer.flipX = true;
+            }
+        }
+        
     }
 
     public override bool GoToNextGoal()

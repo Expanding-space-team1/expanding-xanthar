@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField]
-     private Transform _playerTransform;
+     [SerializeField] private Transform _playerTransform;
      [SerializeField]
      private float speed;
     // Start is called before the first frame update
+    private void Start()
+    {
+        _playerTransform = GameObject.FindWithTag("Player").transform;
+    }
 
     private void FixedUpdate()
     {

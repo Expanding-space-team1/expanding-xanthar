@@ -72,13 +72,13 @@
      <Compile Include="Assets\Scripts\Enemy\Goals\ShootProjectileGoal.cs" />
      <Compile Include="Assets\Scripts\Enemy\Goals\WanderGoal.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Gun\Corsair.cs" />
-     <Compile Include="Assets\Scripts\Gun\Gun.cs" />
      <Compile Include="Assets\Scripts\Input\InputManager.cs" />
      <Compile Include="Assets\Scripts\Parts\Part.cs" />
      <Compile Include="Assets\Scripts\Parts\PartManager.cs" />
      <Compile Include="Assets\Scripts\Parts\PartPicker.cs" />
      <Compile Include="Assets\Scripts\Parts\PartTest.cs" />
+     <Compile Include="Assets\Scripts\Player\Gun\Corsair.cs" />
+     <Compile Include="Assets\Scripts\Player\Gun\Gun.cs" />
      <Compile Include="Assets\Scripts\Player\Health\HealthBar.cs" />
      <Compile Include="Assets\Scripts\Player\Movement\movement.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />

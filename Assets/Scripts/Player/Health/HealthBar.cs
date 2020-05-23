@@ -26,12 +26,14 @@ namespace PlayerData
             _fillImage = componentsInChild;
             break;
         }
+
+        GameManager.PlayerDamage += UpdateSlider;
     }
     public void UpdateSlider()
     {
         if(_slider == null) return;
 
-        _slider.value = (float) _player._health / _player._maxHealth;
+        _slider.value = GameManager.GetInstance().Player._health / GameManager.GetInstance().Player._maxHealth;
 
         if (_slider.value == 0)
         {
