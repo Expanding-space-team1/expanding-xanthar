@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PartPicker : MonoBehaviour
 {
+    public Dialogue dialogue;
     public Part _part;
     private bool inTrigger;
     private void OnTriggerEnter2D(Collider2D other)
@@ -28,7 +29,9 @@ public class PartPicker : MonoBehaviour
         
         if (Input.GetButtonDown("Interact"))
         {
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
             PartManager.GetInstance().AddPart(_part);
+            Destroy(gameObject);
         }
     }
 
