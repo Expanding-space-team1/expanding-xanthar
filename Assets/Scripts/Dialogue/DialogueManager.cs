@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    // public GameObject SoundEffect;
+    
     private Queue<string> sentences;
 
     public Text nameText;
@@ -37,6 +39,10 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        //sound
+        // GameObject sound = Instantiate(SoundEffect) as GameObject;
+        // sound.transform.position = transform.position;
+        //-----
         if (sentences.Count == 0)
         {
             EndDialogue();

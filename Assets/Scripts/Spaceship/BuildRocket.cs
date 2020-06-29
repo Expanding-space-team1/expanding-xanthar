@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BuildRocket : MonoBehaviour
 {
+    public GameObject SoundEffect;
     private bool inTrigger;
     public Dialogue dialogue;
 
@@ -16,7 +17,11 @@ public class BuildRocket : MonoBehaviour
         {
             if (PartManager.GetInstance().HasAllParts())
             {
-                SceneManager.LoadScene(0);
+                // //sound
+                // GameObject sound = Instantiate(SoundEffect) as GameObject;
+                // sound.transform.position = transform.position;
+                // //----
+                SceneManager.LoadScene(11);
             }
             else
             {

@@ -4,6 +4,7 @@
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject _particle;
     [Header("Base Stats")]
     public float _baseHealth;
     public float _baseDamage;
@@ -57,6 +58,10 @@ public class Enemy : MonoBehaviour
         if (damage <= 0) return;
 
         _health -= damage;
+        
+        //insantiate effect
+        GameObject hp = Instantiate(_particle) as GameObject;
+        hp.transform.position = transform.position;
 
         if (_health < 0) _health = 0;
 

@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - music
+  - Collision
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Projectile Player
   - Projectile Enemy
   - Enemy
-  - 
+  - Colliders
   - 
   - 
   - 

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PartManager : MonoBehaviour
 {
+    public GameObject SoundEffect;
+    public GameObject SoundEffectAll;
     private static PartManager instance;
     public Part[] parts;
     private Dictionary<Part, bool> partDic;
@@ -74,6 +76,11 @@ public class PartManager : MonoBehaviour
             partDic[p] = true;
             partAcquired?.Invoke(p);
             uiIcons[i].color = Color.white;
+            
+            //sound
+            GameObject sound = Instantiate(SoundEffect) as GameObject;
+            sound.transform.position = transform.position;
+            //-----
             return;
         }
     }

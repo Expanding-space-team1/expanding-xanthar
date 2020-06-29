@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1402032392479029182}
   - component: {fileID: 1402032392479029178}
   - component: {fileID: 1402032392479029177}
-  m_Layer: 0
-  m_Name: front_walkcycle0001
+  m_Layer: 8
+  m_Name: Walking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  animator: {fileID: 0}
   rb: {fileID: 0}
 --- !u!50 &1402032392479029177
 Rigidbody2D:
