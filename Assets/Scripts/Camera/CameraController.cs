@@ -6,9 +6,9 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
      [SerializeField] private Transform _playerTransform;
-     [SerializeField]
-     private float speed;
-    // Start is called before the first frame update
+     [SerializeField] private float speed;
+
+     // Start is called before the first frame update
     private void Start()
     {
         _playerTransform = GameObject.FindWithTag("Player").transform;
@@ -18,7 +18,5 @@ public class CameraController : MonoBehaviour
     {
         Vector3 position =  Vector2.Lerp(transform.position, _playerTransform.position, speed * Time.deltaTime);
         position.z = -10;
-        transform.position = position;
-        
     }
 }

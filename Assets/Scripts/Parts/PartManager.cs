@@ -6,23 +6,38 @@ using UnityEngine.UI;
 
 public class PartManager : MonoBehaviour
 {
+    public GameObject SoundEffect;
+    public GameObject SoundEffectAll;
     private static PartManager instance;
     public Part[] parts;
-    private Dictionary<Part, bool> partDic = new Dictionary<Part, bool>();
+    private Dictionary<Part, bool> partDic;
     public static Action<Part> partAcquired;
     public Image[] uiIcons;
     private void Awake()
     {
-        instance = this;
+       // instance = this;
     }
 
     private void OnEnable()
     {
-        instance = this;
     }
 
     private void Start()
     {
+        if (instance != null)
+        {
+            for (int i = 0; i < uiIcons.Length; i++)
+            {
+                Part p = parts[i];
+                var img = uiIcons[i];
+                img.color = partDic[p]? Color.white : Color.gray;
+                img.sprite = parts[i]._sprite;
+            }
+            return;
+        }
+        instance = this;
+        partDic = new Dictionary<Part, bool>();
+        DontDestroyOnLoad(gameObject);
         foreach (var part in parts)
         {
             partDic.Add(part, false);
@@ -61,6 +76,11 @@ public class PartManager : MonoBehaviour
             partDic[p] = true;
             partAcquired?.Invoke(p);
             uiIcons[i].color = Color.white;
+            
+            //sound
+            GameObject sound = Instantiate(SoundEffect) as GameObject;
+            sound.transform.position = transform.position;
+            //-----
             return;
         }
     }

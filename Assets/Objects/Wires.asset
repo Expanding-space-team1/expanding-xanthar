@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1dca60c178a88d4b8bfde613eafbfab, type: 3}
   m_Name: Wires
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -6728132599993948194, guid: 9947a304013b15446a94ff231722ab7f,
-    type: 3}
+  _sprite: {fileID: 21300000, guid: 42f9411f418933b44b1ef4e349c420f4, type: 3}
   id: 1
   name: Wires

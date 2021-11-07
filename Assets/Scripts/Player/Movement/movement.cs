@@ -6,11 +6,15 @@ namespace Movement
     public class movement : MonoBehaviour
     {
         public float moveSpeed = 5f;
+
         public Rigidbody2D rb;
-        Vector2 gameMovement;
-        
+        Vector2 gameMovement;    
 
         // Start is called before the first frame update
+        void Start()
+        {
+        
+        }
 
         // Update is called once per frame
         void Update()

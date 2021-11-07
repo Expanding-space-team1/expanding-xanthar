@@ -27,8 +27,14 @@ namespace PlayerData
             break;
         }
 
-        GameManager.PlayerDamage += UpdateSlider;
+       // GameManager.PlayerDamage += UpdateSlider;
     }
+
+    private void Update()
+    {
+        UpdateSlider();
+    }
+
     public void UpdateSlider()
     {
         if(_slider == null) return;

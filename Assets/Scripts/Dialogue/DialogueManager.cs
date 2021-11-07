@@ -5,33 +5,44 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    // public GameObject SoundEffect;
+    
     private Queue<string> sentences;
 
     public Text nameText;
 
     public Text dialogueText;
+
+    public GameObject _dialogueObject;
     // Start is called before the first frame update
     void Awake()
     {
         sentences = new Queue<string>();
+        
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
+        _dialogueObject.SetActive(true);
         nameText.text = dialogue.name;
         
         sentences.Clear();
-
+        
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
-
+        
         DisplayNextSentence();
+        Time.timeScale = 0;
     }
 
     public void DisplayNextSentence()
     {
+        //sound
+        // GameObject sound = Instantiate(SoundEffect) as GameObject;
+        // sound.transform.position = transform.position;
+        //-----
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -56,6 +67,8 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        _dialogueObject.SetActive(false);
         Debug.Log("End of conversation.");
+        Time.timeScale = 1;
     }
 }
